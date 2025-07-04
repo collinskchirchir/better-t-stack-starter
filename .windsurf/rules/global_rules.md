@@ -4,6 +4,12 @@
 
 This project was created with [Better-T-Stack](https://github.com/AmanVarshney01/create-better-t-stack), a modern TypeScript stack that combines Next.js, Hono, TRPC, and more.
 
+## General Code Style & Formatting
+- Follow the Biome formatting and linting rules.
+- Use PascalCase for React component file names (e.g., TodoItem.tsx).
+- Prefer named exports for components.
+- Use descriptive variable names with auxiliary verbs (e.g., isLoading, hasError).
+
 ## Core Technologies
 
 - **TypeScript** - For type safety and improved developer experience
@@ -36,37 +42,17 @@ better-t-stack-starter/
 │       │   └── routers/   # tRPC API routes and handlers
 ```
 
-## Development Workflow
+## Key Directories
 
-### Setup
+### Backend (`apps/server`)
+- `src/db`: Store all database schema definitions and migrations
+- `src/lib`: Place core utilities, auth setup, and tRPC configuration
+- `src/routers`: Organize tRPC routes by feature/domain
 
-1. Install dependencies:
-   ```bash
-   bun install
-   ```
-
-2. Database Setup:
-   - Ensure PostgreSQL is set up
-   - Update `apps/server/.env` with connection details
-   - Apply schema: `bun db:push`
-
-3. Start development servers:
-   ```bash
-   bun dev
-   ```
-   - Web: [http://localhost:3001](http://localhost:3001)
-   - API: [http://localhost:3000](http://localhost:3000)
-
-### Available Scripts
-
-- `bun dev`: Start all applications in development mode
-- `bun build`: Build all applications
-- `bun dev:web`: Start only the web application
-- `bun dev:server`: Start only the server
-- `bun check-types`: Check TypeScript types across all apps
-- `bun db:push`: Push schema changes to database
-- `bun db:studio`: Open database studio UI
-- `bun check`: Run Biome formatting and linting
+### Frontend (`apps/web`)
+- `src/app`: Follow Next.js App Router conventions for page routing
+- `src/components`: Group components by feature or UI category
+- `src/lib`: Store API clients, hooks, and utility functions
 
 ## Coding Standards
 
